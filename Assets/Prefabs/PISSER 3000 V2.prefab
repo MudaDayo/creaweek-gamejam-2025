@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3263847325895931875}
   - component: {fileID: 543475927668822362}
   - component: {fileID: 9045777122461496224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PISSER 3000 V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833361677904478283}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70707685, y: -0.006515651, z: 0.006515472, w: 0.7070767}
-  m_LocalPosition: {x: 3.1, y: 7.3, z: -0}
+  m_LocalRotation: {x: -0.004958808, y: -0.0036842176, z: -0.000018269677, w: 0.9999809}
+  m_LocalPosition: {x: 3.138102, y: -6.8125467, z: 1.9208314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,7 +107,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -3739,7 +3739,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4803,7 +4803,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 4
+  m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
