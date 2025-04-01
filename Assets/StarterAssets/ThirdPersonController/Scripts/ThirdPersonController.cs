@@ -159,6 +159,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            HandlePissAction();
         }
 
         private void LateUpdate()
@@ -211,6 +212,14 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
+        private void HandlePissAction()
+        {
+            if (_input.piss) // Assuming "piss" is a defined input action in StarterAssetsInputs
+            {
+                Debug.Log("Piss action triggered!");
+                _input.piss = false; // Reset the input to prevent repeated logs
+            }
+        }
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
