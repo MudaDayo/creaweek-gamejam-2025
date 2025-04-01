@@ -85,7 +85,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 5128626361671087368}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -233,7 +233,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 7141870628586388901}
   - component: {fileID: 8782296152478321590}
   - component: {fileID: 8934541520033830435}
+  - component: {fileID: 6715054464100214007}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -501,8 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  SprintSpeed: 5.335
+  MoveSpeed: 5.5
+  SprintSpeed: 5.5
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
@@ -533,6 +534,8 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  _recoilModifier: 10
+  Pisser3000Prefab: {fileID: 833361677904478283, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
   _camera: {fileID: 1065478515086491945}
 --- !u!114 &7141870628586388901
 MonoBehaviour:
@@ -567,6 +570,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  piss: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -668,6 +672,33 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 4290525183529929853}
+--- !u!54 &6715054464100214007
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413231802728731139}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1453055375562395001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,14 +1545,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.25, z: 0.3}
+  Damping: {x: 0.1, y: 0.25, z: 1}
   ShoulderOffset: {x: 0, y: 0, z: 1}
   VerticalArmLength: 0
   CameraSide: 0.6
   CameraDistance: 4
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2049
   IgnoreTag: Player
   CameraRadius: 0.15
   DampingIntoCollision: 0

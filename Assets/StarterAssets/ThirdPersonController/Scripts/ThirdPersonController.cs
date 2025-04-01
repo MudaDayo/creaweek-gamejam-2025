@@ -229,12 +229,13 @@ namespace StarterAssets
                         _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
                     }
 
+                _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                _pisser3000.transform.forward = transform.forward;
 
-                // Start the particle system
-                ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                if (ps != null && !ps.isPlaying)
+                var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
+                if (!particleSystem.isPlaying)
                 {
-                    ps.Play();
+                    particleSystem.Play();
                 }
             }
             else if (_pisser3000 != null){
@@ -244,14 +245,11 @@ namespace StarterAssets
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem.isPlaying)
                 {
-                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                    if (ps != null && ps.isPlaying)
-                    {
-                        ps.Stop();
-                    }
+                    particleSystem.Stop();
                 }
             }
         }
+            
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
