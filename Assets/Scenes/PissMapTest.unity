@@ -960,7 +960,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 11.5
+    angle: 6
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -1165,7 +1165,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 25
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4033,7 +4033,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5061,7 +5061,7 @@ Transform:
   m_GameObject: {fileID: 263592177}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70707685, y: -0.006515651, z: 0.006515472, w: 0.7070767}
-  m_LocalPosition: {x: 3.1, y: 7.3, z: -0}
+  m_LocalPosition: {x: 0, y: 0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5080,7 +5080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapColor: {r: 1, g: 0, b: 0, a: 1}
-  puddleSize: 10
+  sizeMin: 20
+  sizeMax: 40
 --- !u!1 &280649870
 GameObject:
   m_ObjectHideFlags: 0
