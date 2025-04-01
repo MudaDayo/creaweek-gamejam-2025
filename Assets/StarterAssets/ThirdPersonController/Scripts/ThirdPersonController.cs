@@ -248,6 +248,17 @@ namespace StarterAssets
                     Debug.LogWarning("Pisser3000 is not assigned or could not be instantiated!");
                 }
             }
+            else{
+                if (_pisser3000 != null)
+                {
+                    // Stop the particle system
+                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
+                    if (ps != null && ps.isPlaying)
+                    {
+                        ps.Stop();
+                    }
+                }
+            }
         }
         private void Move()
         {
