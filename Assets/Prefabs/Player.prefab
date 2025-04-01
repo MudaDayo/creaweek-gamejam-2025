@@ -533,7 +533,6 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  Pisser3000Prefab: {fileID: 833361677904478283, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
   _camera: {fileID: 1065478515086491945}
 --- !u!114 &7141870628586388901
 MonoBehaviour:
@@ -568,7 +567,6 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
-  piss: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Penis : MonoBehaviour
 {
     public Color mapColor = Color.red;
-    public int puddleSize = 1;
+    public int sizeMin = 10;
+    public int sizeMax = 20;
 
     private ParticleSystem part;
     private List<ParticleCollisionEvent> collisionEvents;
@@ -24,7 +25,8 @@ public class Penis : MonoBehaviour
 
         for (int i = 0; i < numCollisionEvents; i++)
         {
-            pissMap.DrawCircle(collisionEvents[i].intersection, puddleSize, mapColor);
+            int size = Random.Range(sizeMin, sizeMax);
+            pissMap.DrawCircle(collisionEvents[i].intersection, size, mapColor);
         }
     }
 }
