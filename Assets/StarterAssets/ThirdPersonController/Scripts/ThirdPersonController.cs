@@ -227,10 +227,10 @@ namespace StarterAssets
                 gameObject.GetComponent<Rigidbody>().AddForce(-transform.forward * _recoilModifier, ForceMode.Impulse); 
                 if (_pisser3000 == null)
                     {
-                        _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+                        _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
                     }
 
-                _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                _pisser3000.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
                 _pisser3000.transform.rotation = Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z);
                 _pisser3000.transform.forward = transform.forward;
 
