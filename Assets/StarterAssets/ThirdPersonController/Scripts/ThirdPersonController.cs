@@ -229,7 +229,7 @@ namespace StarterAssets
                 if (_pisser3000 != null)
                 {
                     // Align the particle system to shoot in the direction the camera is looking
-                    _pisser3000.transform.position = transform.position;
+                    _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
 
                     // Clamp the angle so it never looks downwards
                     Vector3 forward = _camera.transform.forward;
