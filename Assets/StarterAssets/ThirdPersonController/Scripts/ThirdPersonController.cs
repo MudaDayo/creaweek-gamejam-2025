@@ -138,6 +138,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -218,48 +219,32 @@ namespace StarterAssets
 
         private void HandlePissAction()
         {
-            if (_input.piss) // Assuming "piss" is a defined input action in StarterAssetsInputs
+            if (_input.piss)
             {
                 if (_pisser3000 == null)
                 {
-                    // Instantiate a new Pisser3000 if it doesn't exist
                     _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
                 }
 
-                if (_pisser3000 != null)
-                {
-                    // Align the particle system to shoot in the direction the camera is looking
-                    _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                _pisser3000.transform.forward = transform.forward;
 
-                    // Clamp the angle so it never looks downwards
-                    Vector3 forward = _camera.transform.forward;
-                    forward.y = Mathf.Max(forward.y, 0); // Ensure the y-component is non-negative (horizontal or upwards)
-                    _pisser3000.transform.forward = forward.normalized;
-
-                    // Start the particle system
-                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                    if (ps != null && !ps.isPlaying)
-                    {
-                        ps.Play();
-                    }
-                }
-                else
+                var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
+                if (!particleSystem.isPlaying)
                 {
-                    Debug.LogWarning("Pisser3000 is not assigned or could not be instantiated!");
+                    particleSystem.Play();
                 }
             }
-            else{
-                if (_pisser3000 != null)
+            else if (_pisser3000 != null)
+            {
+                var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
+                if (particleSystem.isPlaying)
                 {
-                    // Stop the particle system
-                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                    if (ps != null && ps.isPlaying)
-                    {
-                        ps.Stop();
-                    }
+                    particleSystem.Stop();
                 }
             }
         }
+            
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed

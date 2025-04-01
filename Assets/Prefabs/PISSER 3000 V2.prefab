@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3263847325895931875}
   - component: {fileID: 543475927668822362}
   - component: {fileID: 9045777122461496224}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PISSER 3000 V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3739,7 +3739,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3936,8 +3936,8 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -4782,6 +4782,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: f6a114ef1e52c8d44b19692b625bf8d8, type: 2}
   - {fileID: 2100000, guid: f6a114ef1e52c8d44b19692b625bf8d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
