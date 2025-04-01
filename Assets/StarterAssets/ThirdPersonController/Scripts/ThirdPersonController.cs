@@ -88,7 +88,8 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
 
         //piss
-        public GameObject _pisser3000;
+        private GameObject _pisser3000;
+        public GameObject Pisser3000Prefab;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -219,34 +220,32 @@ namespace StarterAssets
         {
             if (_input.piss) // Assuming "piss" is a defined input action in StarterAssetsInputs
             {
-                Debug.Log("Piss action triggered!");
-
-                // Spawn the particle system if it doesn't already exist
                 if (_pisser3000 == null)
                 {
-                    _pisser3000 = Instantiate(_pisser3000, transform.position, Quaternion.identity);
-
-                    // Align the particle system to shoot in the direction the camera is looking
-                    _pisser3000.transform.forward = _camera.transform.forward;
+                    // Instantiate a new Pisser3000 if it doesn't exist
+                    _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
                 }
 
-                // Start the particle system
-                ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                if (ps != null && !ps.isPlaying)
-                {
-                    ps.Play();
-                }
-            }
-            else
-            {
-                // Stop the particle system when the input is not pressed
                 if (_pisser3000 != null)
                 {
+                    // Align the particle system to shoot in the direction the camera is looking
+                    _pisser3000.transform.position = transform.position;
+
+                    // Clamp the angle so it never looks downwards
+                    Vector3 forward = _camera.transform.forward;
+                    forward.y = Mathf.Max(forward.y, 0); // Ensure the y-component is non-negative (horizontal or upwards)
+                    _pisser3000.transform.forward = forward.normalized;
+
+                    // Start the particle system
                     ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
-                    if (ps != null && ps.isPlaying)
+                    if (ps != null && !ps.isPlaying)
                     {
-                        ps.Stop();
+                        ps.Play();
                     }
+                }
+                else
+                {
+                    Debug.LogWarning("Pisser3000 is not assigned or could not be instantiated!");
                 }
             }
         }
