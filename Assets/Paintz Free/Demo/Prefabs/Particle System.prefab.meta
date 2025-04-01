@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0d2400c3c1897884088b07c41898fbfd
+timeCreated: 1507261406
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145977
+  packageName: Paintz Free
+  packageVersion: 1.0
+  assetPath: Assets/Paintz Free/Demo/Prefabs/Particle System.prefab
+  uploadId: 310224

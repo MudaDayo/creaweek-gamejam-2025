@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 99859dcda49cbde4797dcc8de356057b
+timeCreated: 1536578209
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 25800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145977
+  packageName: Paintz Free
+  packageVersion: 1.0
+  assetPath: Assets/Paintz Free/Demo/Scenes/Trails/LightingData.asset
+  uploadId: 310224

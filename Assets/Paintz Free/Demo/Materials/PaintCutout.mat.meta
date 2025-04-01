@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6bced0ceb0b672e418368c39e74457a2
+timeCreated: 1536830884
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145977
+  packageName: Paintz Free
+  packageVersion: 1.0
+  assetPath: Assets/Paintz Free/Demo/Materials/PaintCutout.mat
+  uploadId: 310224

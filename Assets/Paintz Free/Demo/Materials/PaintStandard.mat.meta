@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e37a6aff1dee2f14990927fa5d81d7f3
+timeCreated: 1536830884
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145977
+  packageName: Paintz Free
+  packageVersion: 1.0
+  assetPath: Assets/Paintz Free/Demo/Materials/PaintStandard.mat
+  uploadId: 310224
