@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
@@ -13,53 +14,75 @@ public class PlayerSpawner : MonoBehaviour
 
         if (gamepads.Count == 0)
         {
-            SpawnMultiple(prefabs[1], spawnPoints[0], 10);
-            Debug.Log("No gamepads found, 1 min");
+            // Spawn Player 0 with keyboard
+            SpawnPlayer(prefabs[0], 0, "KeyboardMouse", null, spawnPoints[0].position, spawnPoints[0].rotation);
+            Debug.Log("No gamepads found, Player 0 spawned with keyboard.");
             return;
         }
 
-        // Spawn players
-        SpawnPlayer(prefabs[0], 0, "Gamepad", null, spawnPoints[0].position, spawnPoints[0].rotation);
+        HashSet<InputDevice> usedDevices = new HashSet<InputDevice>();
 
-        for (int i = 0; i < 3; i++)
+        // Spawn Player 0 with the first available input device
+        InputDevice deviceForPlayer0 = Keyboard.current != null ? Keyboard.current : gamepads[0];
+        SpawnPlayer(prefabs[0], 0, deviceForPlayer0 is Gamepad ? "Gamepad" : "KeyboardMouse", deviceForPlayer0, spawnPoints[0].position, spawnPoints[0].rotation);
+        usedDevices.Add(deviceForPlayer0);
+
+        // Spawn additional players
+        for (int i = 1; i <= 3; i++)
         {
             GameObject prefab = prefabs[i % prefabs.Length];
             Transform spawnPoint = spawnPoints[i % spawnPoints.Length];
             Vector3 offset = GetOffset(i);
 
-            if (i < gamepads.Count)
+            InputDevice device = null;
+            string controlScheme = "KeyboardMouse";
+
+            // Assign a unique gamepad to each player if available
+            foreach (Gamepad gamepad in gamepads)
             {
-                SpawnPlayer(prefab, i + 1, "Gamepad", gamepads[i], spawnPoint.position + offset, spawnPoint.rotation);
+                if (!usedDevices.Contains(gamepad))
+                {
+                    device = gamepad;
+                    controlScheme = usedDevices.Count switch
+                    {
+                        1 => "Gamepad 2",
+                        2 => "Gamepad 3",
+                        3 => "Gamepad 4",
+                        _ => "Gamepad"
+                    };
+                    usedDevices.Add(gamepad);
+                    break;
+                }
             }
-            else
+
+            // Fallback to keyboard if no gamepad is available
+            if (device == null && !usedDevices.Contains(Keyboard.current))
             {
-                SpawnPlayer(prefab, i + 1, "KeyboardMouse", null, spawnPoint.position + offset, spawnPoint.rotation);
+                device = Keyboard.current;
+                usedDevices.Add(device);
             }
+
+            SpawnPlayer(prefab, i, controlScheme, device, spawnPoint.position + offset, spawnPoint.rotation);
         }
     }
 
     private void SpawnPlayer(GameObject prefab, int playerIndex, string controlScheme, InputDevice device, Vector3 position, Quaternion rotation)
     {
         PlayerInput player = PlayerInput.Instantiate(prefab, playerIndex: playerIndex, controlScheme: controlScheme, pairWithDevice: device);
-        player.transform.position = position;
-        player.transform.rotation = rotation;
-    }
+        player.transform.SetPositionAndRotation(position, rotation);
 
-    private void SpawnMultiple(GameObject prefab, Transform spawnPoint, int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
-        }
+        // Debug log to track player assignments
+        string deviceName = device != null ? device.displayName : "None";
+        Debug.Log($"Player {playerIndex} spawned with control scheme '{controlScheme}' and device '{deviceName}'.");
     }
 
     private Vector3 GetOffset(int playerIndex)
     {
-        switch (playerIndex)
+        return playerIndex switch
         {
-            case 2: return Vector3.right * 2; // Player 3 offset
-            case 3: return Vector3.left * 2; // Player 4 offset
-            default: return Vector3.zero;
-        }
+            2 => Vector3.right * 2, // Player 3 offset
+            3 => Vector3.left * 2,  // Player 4 offset
+            _ => Vector3.zero,
+        };
     }
 }
