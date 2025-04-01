@@ -87,6 +87,8 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        public float _recoilModifier = 0.5f;
+
         //piss
         private GameObject _pisser3000;
         public GameObject Pisser3000Prefab;
@@ -219,12 +221,13 @@ namespace StarterAssets
 
         private void HandlePissAction()
         {
-            if (_input.piss)
-            {
+            if (_input.piss){
+                _controller.enabled = false;
+                gameObject.GetComponent<Rigidbody>().AddForce(-transform.forward * _recoilModifier, ForceMode.Impulse); 
                 if (_pisser3000 == null)
-                {
-                    _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
-                }
+                    {
+                        _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+                    }
 
                 _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
                 _pisser3000.transform.forward = transform.forward;
@@ -235,8 +238,10 @@ namespace StarterAssets
                     particleSystem.Play();
                 }
             }
-            else if (_pisser3000 != null)
-            {
+            else if (_pisser3000 != null){
+                gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            _controller.enabled = true;
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem.isPlaying)
                 {
