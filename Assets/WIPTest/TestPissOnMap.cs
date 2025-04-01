@@ -9,6 +9,8 @@ public class TestPissOnMap : MonoBehaviour
     {
         _tex = new Texture2D(width, height, TextureFormat.RGBA32, false);
         GetComponent<Renderer>().material.SetTexture("_Map", _tex);
+
+        ClearPiss();
     }
     void Update()
     {
@@ -22,7 +24,7 @@ public class TestPissOnMap : MonoBehaviour
         {
             for (int x = 0; x < width; x++)
             {
-                _tex.SetPixel(x, y, new Color(0, 0, 0, 0));
+                _tex.SetPixel(x, y, new Color(0, 0, 0, 1));
             }
         }
     }
