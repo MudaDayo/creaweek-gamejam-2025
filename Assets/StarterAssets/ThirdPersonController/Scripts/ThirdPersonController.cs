@@ -230,6 +230,7 @@ namespace StarterAssets
                     }
 
                 _pisser3000.transform.position = transform.position + new Vector3(0f, 1f, 0f);
+                _pisser3000.transform.rotation = Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z);
                 _pisser3000.transform.forward = transform.forward;
 
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
