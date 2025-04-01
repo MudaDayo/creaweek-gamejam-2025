@@ -31,7 +31,7 @@ public class ControllerValidator : MonoBehaviour
         }
 
         listControllerText.text = controllers;
-        if (count >= 2)
+        if (count >= 4)
         {
             playButton.interactable = true;
         }
