@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1354a61f6579d7244a474b3cc8b48a29
+timeCreated: 1506998219
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145977
+  packageName: Paintz Free
+  packageVersion: 1.0
+  assetPath: Assets/Paintz Free/Demo/Materials/PaintOrange.mat
+  uploadId: 310224

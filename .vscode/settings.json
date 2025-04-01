@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "creaweek gamejam 2025.sln"
+    "dotnet.defaultSolution": "creaweek-gamejam-2025.sln"
 }
