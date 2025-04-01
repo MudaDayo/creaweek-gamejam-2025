@@ -195,7 +195,7 @@ namespace StarterAssets
             RaycastHit hit;
             if (!Grounded)
             {
-                if (Physics.Raycast(transform.position, Vector3.down, out hit, GroundedRadius + 0.1f, GroundLayers))
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, GroundedRadius + 0.1f))
                 {
                     Grounded = true;
                 }
@@ -231,37 +231,34 @@ namespace StarterAssets
 
         private void HandlePissAction()
         {
-            if (_input.piss){
-                _controller.enabled = false;
-                gameObject.GetComponent<Collider>().enabled = true;
-                gameObject.GetComponent<Rigidbody>().AddForce(-transform.forward * _recoilModifier, ForceMode.Impulse); 
+            if (_input.piss)
+            {
                 if (_pisser3000 == null)
-                    {
-                        _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
-                    }
+                {
+                    _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                }
 
-                _pisser3000.transform.position = transform.position + new Vector3(0f, 0.5f, 0f);
-                _pisser3000.transform.rotation = Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z);
-                _pisser3000.transform.forward = transform.forward;
+                _pisser3000.transform.SetPositionAndRotation(
+                    transform.position + new Vector3(0f, 0.5f, 0f),
+                    Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z)
+                );
 
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
-                if (!particleSystem.isPlaying)
+                if (particleSystem != null && !particleSystem.isPlaying)
                 {
                     particleSystem.Play();
                 }
             }
-            else if (_pisser3000 != null){
-                gameObject.GetComponent<Collider>().enabled = false;
-                gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-                gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            _controller.enabled = true;
+            else if (_pisser3000 != null)
+            {
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
-                if (particleSystem.isPlaying)
+                if (particleSystem != null && particleSystem.isPlaying)
                 {
                     particleSystem.Stop();
                 }
             }
         }
+        
             
         private void Move()
         {
