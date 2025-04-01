@@ -223,7 +223,6 @@ namespace StarterAssets
         {
             if (_input.piss){
                 _controller.enabled = false;
-                gameObject.GetComponent<Collider>().enabled = true;
                 gameObject.GetComponent<Rigidbody>().AddForce(-transform.forward * _recoilModifier, ForceMode.Impulse); 
                 if (_pisser3000 == null)
                     {
@@ -241,7 +240,6 @@ namespace StarterAssets
                 }
             }
             else if (_pisser3000 != null){
-                gameObject.GetComponent<Collider>().enabled = false;
                 gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
                 gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             _controller.enabled = true;
