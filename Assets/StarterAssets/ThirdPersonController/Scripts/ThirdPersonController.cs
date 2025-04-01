@@ -87,6 +87,9 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        //piss
+        public GameObject _pisser3000;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -104,7 +107,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
-        private GameObject _mainCamera;
+        [SerializeField] private GameObject _camera;
 
         private const float _threshold = 0.01f;
 
@@ -123,14 +126,14 @@ namespace StarterAssets
         }
 
 
-        private void Awake()
-        {
-            // get a reference to our main camera
-            if (_mainCamera == null)
-            {
-                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-            }
-        }
+        // private void Awake()
+        // {
+        //     // get a reference to our main camera
+        //     if (_camera == null)
+        //     {
+        //         _camera = GameObject.FindGameObjectWithTag("MainCamera");
+        //     }
+        // }
 
         private void Start()
         {
@@ -159,6 +162,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            HandlePissAction();
         }
 
         private void LateUpdate()
@@ -211,6 +215,41 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
+        private void HandlePissAction()
+        {
+            if (_input.piss) // Assuming "piss" is a defined input action in StarterAssetsInputs
+            {
+                Debug.Log("Piss action triggered!");
+
+                // Spawn the particle system if it doesn't already exist
+                if (_pisser3000 == null)
+                {
+                    _pisser3000 = Instantiate(_pisser3000, transform.position, Quaternion.identity);
+
+                    // Align the particle system to shoot in the direction the camera is looking
+                    _pisser3000.transform.forward = _camera.transform.forward;
+                }
+
+                // Start the particle system
+                ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
+                if (ps != null && !ps.isPlaying)
+                {
+                    ps.Play();
+                }
+            }
+            else
+            {
+                // Stop the particle system when the input is not pressed
+                if (_pisser3000 != null)
+                {
+                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
+                    if (ps != null && ps.isPlaying)
+                    {
+                        ps.Stop();
+                    }
+                }
+            }
+        }
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
@@ -256,7 +295,7 @@ namespace StarterAssets
             if (_input.move != Vector2.zero)
             {
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-                                  _mainCamera.transform.eulerAngles.y;
+                                  _camera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
 
