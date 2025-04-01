@@ -87,6 +87,9 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        //piss
+        public GameObject _pisser3000;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -217,7 +220,34 @@ namespace StarterAssets
             if (_input.piss) // Assuming "piss" is a defined input action in StarterAssetsInputs
             {
                 Debug.Log("Piss action triggered!");
-                _input.piss = false; // Reset the input to prevent repeated logs
+
+                // Spawn the particle system if it doesn't already exist
+                if (_pisser3000 == null)
+                {
+                    _pisser3000 = Instantiate(_pisser3000, transform.position, Quaternion.identity);
+
+                    // Align the particle system to shoot in the direction the camera is looking
+                    _pisser3000.transform.forward = _camera.transform.forward;
+                }
+
+                // Start the particle system
+                ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
+                if (ps != null && !ps.isPlaying)
+                {
+                    ps.Play();
+                }
+            }
+            else
+            {
+                // Stop the particle system when the input is not pressed
+                if (_pisser3000 != null)
+                {
+                    ParticleSystem ps = _pisser3000.GetComponent<ParticleSystem>();
+                    if (ps != null && ps.isPlaying)
+                    {
+                        ps.Stop();
+                    }
+                }
             }
         }
         private void Move()
