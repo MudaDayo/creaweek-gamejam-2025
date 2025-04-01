@@ -191,6 +191,16 @@ namespace StarterAssets
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
 
+            // Perform a raycast downwards to check for anything below
+            RaycastHit hit;
+            if (!Grounded)
+            {
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, GroundedRadius + 0.1f, GroundLayers))
+                {
+                    Grounded = true;
+                }
+            }
+
             // update animator if using character
             if (_hasAnimator)
             {
@@ -223,6 +233,7 @@ namespace StarterAssets
         {
             if (_input.piss){
                 _controller.enabled = false;
+                gameObject.GetComponent<Collider>().enabled = true;
                 gameObject.GetComponent<Rigidbody>().AddForce(-transform.forward * _recoilModifier, ForceMode.Impulse); 
                 if (_pisser3000 == null)
                     {
@@ -240,6 +251,7 @@ namespace StarterAssets
                 }
             }
             else if (_pisser3000 != null){
+                gameObject.GetComponent<Collider>().enabled = false;
                 gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
                 gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             _controller.enabled = true;
@@ -261,7 +273,7 @@ namespace StarterAssets
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
-            gameObject.GetComponent<Rigidbody>().AddForce(transform.right * _input.move.x * _recoilModifier, ForceMode.Impulse);
+            //gameObject.GetComponent<Rigidbody>().AddForce(transform.right * _input.move.x * _recoilModifier, ForceMode.Impulse);
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 

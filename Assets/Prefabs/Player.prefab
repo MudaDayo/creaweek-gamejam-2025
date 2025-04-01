@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 8782296152478321590}
   - component: {fileID: 8934541520033830435}
   - component: {fileID: 6715054464100214007}
-  - component: {fileID: 2238482704328500392}
+  - component: {fileID: 2663370109599299911}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -535,7 +535,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  _recoilModifier: 0.1
+  _recoilModifier: 11000
   Pisser3000Prefab: {fileID: 833361677904478283, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
   _camera: {fileID: 1065478515086491945}
 --- !u!114 &7141870628586388901
@@ -700,14 +700,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2238482704328500392
-BoxCollider:
+--- !u!136 &2663370109599299911
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413231802728731139}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 688fa006a782d334483d6ed87ca9d60e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -718,8 +718,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!1 &1453055375562395001
 GameObject:
