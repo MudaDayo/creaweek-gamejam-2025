@@ -4088,7 +4088,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -5448,7 +5448,7 @@ GameObject:
   - component: {fileID: 1837266361}
   - component: {fileID: 1837266364}
   - component: {fileID: 1837266365}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
