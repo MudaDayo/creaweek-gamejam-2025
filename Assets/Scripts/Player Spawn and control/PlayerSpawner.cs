@@ -12,27 +12,57 @@ public class PlayerSpawner : MonoBehaviour
     {
         ReadOnlyArray<Gamepad> gamepads = Gamepad.all;
 
-        if (gamepads.Count < 4)
+        if (gamepads.Count == 0)
         {
-            Debug.LogError("At least 4 gamepads are required to play the game.");
-            return; // Exit if there are fewer than 4 gamepads
+            // Spawn Player 0 with keyboard
+            SpawnPlayer(prefabs[0], 0, "KeyboardMouse", null, spawnPoints[0].position, spawnPoints[0].rotation);
+            Debug.Log("No gamepads found, Player 0 spawned with keyboard.");
+            return;
         }
 
         HashSet<InputDevice> usedDevices = new HashSet<InputDevice>();
 
-        // Spawn players with gamepads
-        for (int i = 0; i < 4; i++)
+        // Spawn Player 0 with the first available input device
+        InputDevice deviceForPlayer0 = Keyboard.current != null ? Keyboard.current : gamepads[0];
+        SpawnPlayer(prefabs[0], 0, deviceForPlayer0 is Gamepad ? "Gamepad" : "KeyboardMouse", deviceForPlayer0, spawnPoints[0].position, spawnPoints[0].rotation);
+        usedDevices.Add(deviceForPlayer0);
+
+        // Spawn additional players
+        for (int i = 1; i <= 3; i++)
         {
             GameObject prefab = prefabs[i % prefabs.Length];
             Transform spawnPoint = spawnPoints[i % spawnPoints.Length];
             Vector3 offset = GetOffset(i);
 
-            Gamepad gamepad = gamepads[i];
-            string controlScheme = $"Gamepad {i + 1}";
+            InputDevice device = null;
+            string controlScheme = "KeyboardMouse";
 
-            usedDevices.Add(gamepad);
+            // Assign a unique gamepad to each player if available
+            foreach (Gamepad gamepad in gamepads)
+            {
+                if (!usedDevices.Contains(gamepad))
+                {
+                    device = gamepad;
+                    controlScheme = usedDevices.Count switch
+                    {
+                        1 => "Gamepad 2",
+                        2 => "Gamepad 3",
+                        3 => "Gamepad 4",
+                        _ => "Gamepad"
+                    };
+                    usedDevices.Add(gamepad);
+                    break;
+                }
+            }
 
-            SpawnPlayer(prefab, i, controlScheme, gamepad, spawnPoint.position + offset, spawnPoint.rotation);
+            // Fallback to keyboard if no gamepad is available
+            if (device == null && !usedDevices.Contains(Keyboard.current))
+            {
+                device = Keyboard.current;
+                usedDevices.Add(device);
+            }
+
+            SpawnPlayer(prefab, i, controlScheme, device, spawnPoint.position + offset, spawnPoint.rotation);
         }
     }
 
