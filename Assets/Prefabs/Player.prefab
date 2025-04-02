@@ -3310,7 +3310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9045777122461496224, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: puddleSize
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

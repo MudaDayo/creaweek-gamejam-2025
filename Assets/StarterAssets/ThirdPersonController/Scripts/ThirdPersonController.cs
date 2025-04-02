@@ -256,6 +256,7 @@ namespace StarterAssets
             }
             else if (_pisser3000 != null)
             {
+                _pisserTurbo.GetComponent<ParticleSystem>().Stop();
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem != null && particleSystem.isPlaying)
                 {
