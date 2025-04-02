@@ -87,6 +87,8 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        [SerializeField] private AudioSource _audioSource;
+
         public float _recoilModifier = 0.5f;
         public int _playerIndex = 1; // 1-4
 
@@ -175,6 +177,7 @@ namespace StarterAssets
             Move();
             HandlePissAction();
             HandleDrinkAction();
+            Bark();
         }
 
         private void LateUpdate()
@@ -236,7 +239,11 @@ namespace StarterAssets
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
         }
-
+        private void Bark(){
+            if(_input.bark){
+                _audioSource.Play();
+            }
+        }
         private void HandleDrinkAction(){
             if(_input.drink){            
                 _pissMeterManager.AddPissToMeter(100, _playerIndex - 1);
