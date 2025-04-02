@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: mapColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3923465968828624541, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
+      propertyPath: _playerIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4290525183529929853, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 3255

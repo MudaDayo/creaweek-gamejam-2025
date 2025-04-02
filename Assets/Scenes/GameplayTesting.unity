@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 750348775}
   m_Layer: 0
   m_Name: PISSMETERMANAGER
-  m_TagString: Untagged
+  m_TagString: PissMeterManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,7 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca5e6df56e62b543bc6a725bf2a5890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliders: []
 --- !u!4 &750348776
 Transform:
   m_ObjectHideFlags: 0

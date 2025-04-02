@@ -88,10 +88,15 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
 
         public float _recoilModifier = 0.5f;
+        public int _playerIndex = 1; // 1-4
 
         //piss
         [SerializeField]private GameObject _pisser3000;
         [SerializeField]private GameObject _pisserTurbo;
+        [SerializeField]private PissMeterManager _pissMeterManager;
+
+        [SerializeField]private int _pissAmount = 1;
+        [SerializeField]private int _sprintPissRatio = 2; // 2x piss when sprinting
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -140,6 +145,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            _pissMeterManager = GameObject.FindGameObjectWithTag("PissMeterManager").GetComponent<PissMeterManager>();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
@@ -232,7 +238,10 @@ namespace StarterAssets
         }
 
         private void HandleDrinkAction(){
-            //Debug.Log($"{gameObject.name} is drinking");
+            if(_input.drink){            
+                _pissMeterManager.AddPissToMeter(100, _playerIndex - 1);
+                Debug.Log("Drinking Piss!");
+}
         }
 
         private void HandlePissAction()
@@ -243,9 +252,13 @@ namespace StarterAssets
 
             if (_input.piss)
             {
+                int pissAmount = _pissAmount;
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
                         _pisserTurbo.GetComponent<ParticleSystem>().Play();
+                        pissAmount *= _sprintPissRatio;
                 }
+
+                _pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
 
                 if (_pisser3000 != null)
                 {

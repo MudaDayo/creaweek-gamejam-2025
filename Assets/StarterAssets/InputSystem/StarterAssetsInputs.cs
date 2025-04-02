@@ -81,9 +81,9 @@ namespace StarterAssets
 		{
 			piss = newPissState;
 		}
-		public void DrinkInput(bool newPissState)
+		public void DrinkInput(bool newDrinkState)
 		{
-			piss = newPissState;
+			drink = newDrinkState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

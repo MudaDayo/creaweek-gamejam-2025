@@ -537,8 +537,12 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 0
   _recoilModifier: 12
+  _playerIndex: 1
   _pisser3000: {fileID: 6265459043413439739}
   _pisserTurbo: {fileID: 5989440627914367862}
+  _pissMeterManager: {fileID: 0}
+  _pissAmount: 1
+  _sprintPissRatio: 2
   _camera: {fileID: 1065478515086491945}
 --- !u!114 &7141870628586388901
 MonoBehaviour:
@@ -3274,19 +3278,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8861976
+      value: 0.6243946
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.46329287
+      value: -0.32642558
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0032636276
+      value: 0.6288786
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0017061832
+      value: 0.32876977
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3294,7 +3298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 179.578
+      value: 270.41
       objectReference: {fileID: 0}
     - target: {fileID: 3080488864704695612, guid: d9e4a7c7e77cde24ca071a20c7e46a7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
