@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class TestPissOnMap : MonoBehaviour
@@ -10,6 +11,14 @@ public class TestPissOnMap : MonoBehaviour
     void Start()
     {
         _tex = new Texture2D(width, height, TextureFormat.RGBA32, false);
+
+        // Initialize all pixels to a default color (e.g., fully transparent)
+        Color clearColor = new Color(0, 0, 0, 0); // Fully transparent
+        Color[] pixels = Enumerable.Repeat(clearColor, width * height).ToArray();
+        _tex.SetPixels(pixels);
+        _tex.Apply(); // Apply changes to make pixels readable
+
+        // Assign texture to the material
         GetComponent<Renderer>().material.SetTexture("_Map", _tex);
 
         ClearPiss();

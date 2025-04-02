@@ -44,16 +44,15 @@ public class ScoreCalculation : MonoBehaviour
 
     public Vector4 GetScores()
     {
-        // reload image?
-        // image = renderer.material.GetTexture("_Map") as Texture2D;
-
         Color32[] pixels = image.GetPixels32();
-        scores.x = pixels.Count(p => p.r == 255 && p.g == 0 && p.b == 0 && p.a == 255);
-        scores.y = pixels.Count(p => p.r == 0 && p.g == 255 && p.b == 0 && p.a == 255);
-        scores.z = pixels.Count(p => p.r == 0 && p.g == 0 && p.b == 255 && p.a == 255);
-        scores.w = pixels.Count(p => p.a == 0);
+        scores = new Vector4(
+            pixels.Count(p => p.r == 255 && p.g == 0 && p.b == 0 && p.a == 255),
+            pixels.Count(p => p.r == 0 && p.g == 255 && p.b == 0 && p.a == 255),
+            pixels.Count(p => p.r == 0 && p.g == 0 && p.b == 255 && p.a == 255),
+            pixels.Count(p => p.a == 0)
+        );
 
-        Debug.Log(scores);
+        Debug.Log($"Scores: Red={scores.x}, Green={scores.y}, Blue={scores.z}, Transparent={scores.w}");
 
         return scores;
     }
