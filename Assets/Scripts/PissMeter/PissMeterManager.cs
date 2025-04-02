@@ -10,7 +10,7 @@ public class PissMeterManager : MonoBehaviour
     private Slider[] _sliders;
     private int _maxPiss = 100;
 
-    void Start()
+    void Awake()
     {
         _sliders = new Slider[4];
         PissMeters = new PissMeter[4];
