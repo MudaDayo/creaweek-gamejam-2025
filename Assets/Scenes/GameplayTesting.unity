@@ -1277,6 +1277,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[4].soundName
       value: LevelMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: 'sounds.Array.data[4].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b52853e56a9d74a4abc894621ad82f4d, type: 3}
     - target: {fileID: 2133441065899699171, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: m_Name
       value: AudioManager

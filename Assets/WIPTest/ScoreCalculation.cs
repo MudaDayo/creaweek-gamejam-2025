@@ -52,7 +52,7 @@ public class ScoreCalculation : MonoBehaviour
             pixels.Count(p => p.a == 0)
         );
 
-        Debug.Log($"Scores: Red={scores.x}, Green={scores.y}, Blue={scores.z}, Transparent={scores.w}");
+        Debug.Log("scores: " + scores);
 
         return scores;
     }
@@ -60,7 +60,7 @@ public class ScoreCalculation : MonoBehaviour
     public Vector4 GetPercents()
     {
         percents = (scores / totalPixels) * 100f;
-        Debug.Log(percents);
+        Debug.Log("score percents: " + percents);
         return percents;
     }
 }
