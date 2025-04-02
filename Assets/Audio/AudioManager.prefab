@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565137913797197129}
   - component: {fileID: 940012377448947900}
+  - component: {fileID: 6460950840381746710}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -67,8 +68,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 65a724454bab3014b876c047c7c1e3e4, type: 3}
     - {fileID: 8300000, guid: 143bfdb88ab481747a7f916e6978beb1, type: 3}
     loop: 0
-    minVolume: 0
-    maxVolume: 0
+    minVolume: 0.8
+    maxVolume: 1
     minPitch: 0.95
     maxPitch: 1.1
     lastPlayedIndex: 0
@@ -95,15 +96,25 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4b73d62f3b00a20499d2899b8c04ac47, type: 3}
     - {fileID: 8300000, guid: 5537eca46a0cf1a438d9ff7de0145e72, type: 3}
     loop: 0
-    minVolume: 0.8
-    maxVolume: 1
+    minVolume: 0.6
+    maxVolume: 0.8
     minPitch: 0.95
     maxPitch: 1.1
     lastPlayedIndex: 0
     currentSource: {fileID: 0}
   - soundName: LevelMusic
     audioClips:
-    - {fileID: 8300000, guid: d088663d081a9a2459256f866b531269, type: 3}
+    - {fileID: 8300000, guid: b52853e56a9d74a4abc894621ad82f4d, type: 3}
+    loop: 1
+    minVolume: 0.5
+    maxVolume: 0.5
+    minPitch: 1
+    maxPitch: 1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: piss1
+    audioClips:
+    - {fileID: 8300000, guid: 07d11cc36416ff14084be0600a1f3f4f, type: 3}
     loop: 1
     minVolume: 1
     maxVolume: 1
@@ -111,3 +122,45 @@ MonoBehaviour:
     maxPitch: 1
     lastPlayedIndex: 0
     currentSource: {fileID: 0}
+  - soundName: piss2
+    audioClips:
+    - {fileID: 8300000, guid: ff296d7fcff09514cbff79bbfaedfad4, type: 3}
+    loop: 1
+    minVolume: 1
+    maxVolume: 1
+    minPitch: 1
+    maxPitch: 1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: piss3
+    audioClips:
+    - {fileID: 8300000, guid: 82b2a7d1fb2582b41a8a9bed33004704, type: 3}
+    loop: 1
+    minVolume: 1
+    maxVolume: 1
+    minPitch: 1
+    maxPitch: 1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: piss4
+    audioClips:
+    - {fileID: 8300000, guid: 7982ce1ab392cfd4585a23590ef1779a, type: 3}
+    loop: 1
+    minVolume: 1
+    maxVolume: 1
+    minPitch: 1
+    maxPitch: 1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+--- !u!114 &6460950840381746710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133441065899699171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c46238a65d197c47b8eed1d974be616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

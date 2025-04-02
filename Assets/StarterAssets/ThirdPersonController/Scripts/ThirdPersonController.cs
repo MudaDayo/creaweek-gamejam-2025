@@ -14,6 +14,10 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        // AUDIO
+        private AudioManager audioManager;
+        public int playerID = 1;
+
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -262,6 +266,10 @@ namespace StarterAssets
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
                         _pisserTurbo.GetComponent<ParticleSystem>().Play();
                         pissAmount *= _sprintPissRatio;
+
+                    //sprint pissing
+
+                    
                 }
 
                 _pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
@@ -272,6 +280,9 @@ namespace StarterAssets
                     if (particleSystem != null && !particleSystem.isPlaying)
                     {
                         particleSystem.Play();
+
+                        // normal pissing
+                        audioManager?.PlaySound("Piss" + _playerIndex);
                     }
                 }
             }

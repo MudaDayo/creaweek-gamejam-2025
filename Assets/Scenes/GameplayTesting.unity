@@ -728,23 +728,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1053238537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2133441065899699171, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-  m_PrefabInstance: {fileID: 1695939733}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1053238540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053238537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c46238a65d197c47b8eed1d974be616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1096057240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,37 +1233,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[1].maxVolume
+      propertyPath: sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[9].loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[1].minVolume
-      value: 0.8
+      propertyPath: sounds.Array.data[9].maxPitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[3].maxVolume
-      value: 0.8
+      propertyPath: sounds.Array.data[9].minPitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[3].minVolume
-      value: 0.6
+      propertyPath: sounds.Array.data[9].maxVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[4].maxVolume
-      value: 0.5
+      propertyPath: sounds.Array.data[9].minVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[4].minVolume
-      value: 0.5
+      propertyPath: sounds.Array.data[9].soundName
+      value: piss4
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: sounds.Array.data[4].soundName
-      value: LevelMusic
+      propertyPath: sounds.Array.data[9].audioClips.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      propertyPath: 'sounds.Array.data[4].audioClips.Array.data[0]'
+      propertyPath: 'sounds.Array.data[9].audioClips.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: b52853e56a9d74a4abc894621ad82f4d, type: 3}
+      objectReference: {fileID: 8300000, guid: 7982ce1ab392cfd4585a23590ef1779a, type: 3}
     - target: {fileID: 2133441065899699171, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1328,10 +1315,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2133441065899699171, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1053238540}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
 --- !u!1 &1944484780
 GameObject:
