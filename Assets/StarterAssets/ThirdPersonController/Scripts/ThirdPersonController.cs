@@ -91,6 +91,7 @@ namespace StarterAssets
 
         //piss
         [SerializeField]private GameObject _pisser3000;
+        [SerializeField]private GameObject _pisserTurbo;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -234,8 +235,16 @@ namespace StarterAssets
 
         private void HandlePissAction()
         {
+            if((!_input.sprint && _pisserTurbo.GetComponent<ParticleSystem>().isPlaying )|| _input.move == Vector2.zero){
+                    _pisserTurbo.GetComponent<ParticleSystem>().Stop();
+            }
+
             if (_input.piss)
             {
+                if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
+                        _pisserTurbo.GetComponent<ParticleSystem>().Play();
+                }
+
                 if (_pisser3000 != null)
                 {
                     var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
