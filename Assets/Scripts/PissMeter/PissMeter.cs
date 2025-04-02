@@ -5,17 +5,21 @@ using static UnityEngine.Rendering.DebugUI;
 public class PissMeter : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    public int PissAmount {  get; private set; }
+    public int PissAmount {  get; private set; }  = 0;
 
-    public PissMeter(Slider slider)
+
+    void Start()
     {
-        _slider = slider;
+        _slider = gameObject.GetComponent<Slider>();
+        Debug.Log(_slider.name);
     }
 
     public void AddPiss(int pissAmount)
     {
         PissAmount += pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
+        Debug.Log(PissAmount);
+        Debug.Log(_slider.name);
         _slider.value = PissAmount;
     }
 

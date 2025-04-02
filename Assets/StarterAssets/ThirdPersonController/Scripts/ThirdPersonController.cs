@@ -232,7 +232,7 @@ namespace StarterAssets
         }
 
         private void HandleDrinkAction(){
-            Debug.Log($"{gameObject.name} is drinking");
+            //Debug.Log($"{gameObject.name} is drinking");
         }
 
         private void HandlePissAction()

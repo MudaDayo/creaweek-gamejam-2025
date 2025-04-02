@@ -8,7 +8,7 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject[] prefabs; // Assign prefabs in the Inspector (index 0 to 4)
     public Transform[] spawnPoints; // Assign spawn points in the Inspector (index 0 to 2)
 
-    void Start()
+    void Awake()
     {
         ReadOnlyArray<Gamepad> gamepads = Gamepad.all;
 
