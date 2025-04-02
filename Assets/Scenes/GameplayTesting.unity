@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: height
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 3554014068172883059, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6fe00646243b21244a5b09dbaa5cfddd, type: 2}
     - target: {fileID: 5006267513117134843, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
       propertyPath: m_Name
       value: Piss Mat 1
@@ -444,7 +448,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5006267513117134843, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2117988254}
   m_SourcePrefab: {fileID: 100100000, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
 --- !u!1 &410087039
 GameObject:
@@ -1428,6 +1435,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
+--- !u!1 &2117988248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5006267513117134843, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
+  m_PrefabInstance: {fileID: 329726459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2117988251 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3554014068172883059, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
+  m_PrefabInstance: {fileID: 329726459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117988254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117988248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d910e580ae8c574a8d56cf706cb07eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 2117988251}
+  refreshRate: 0.5
 --- !u!114 &5015613098893344029
 MonoBehaviour:
   m_ObjectHideFlags: 0

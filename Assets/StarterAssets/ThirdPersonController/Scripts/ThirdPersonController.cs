@@ -247,7 +247,6 @@ namespace StarterAssets
         private void HandleDrinkAction(){
             if(_input.drink){            
                 _pissMeterManager.AddPissToMeter(100, _playerIndex - 1);
-                Debug.Log("Drinking Piss!");
 }
         }
 
