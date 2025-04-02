@@ -64,29 +64,39 @@ public class AudioManager : MonoBehaviour
         AudioClip clip = s.GetRandomClip();
         if (clip == null) return;
 
-        // If looping, reuse the same AudioSource
+        // If the sound is looping and already has an active AudioSource, don't restart it.
         if (s.loop && s.currentSource != null)
         {
-            s.currentSource.Play();
+            if (!s.currentSource.isPlaying)
+            {
+                s.currentSource.Play();
+            }
             return;
         }
 
+        // Create new GameObject and AudioSource
         GameObject tempGO = new GameObject("TempAudio_" + soundName);
         AudioSource aSource = tempGO.AddComponent<AudioSource>();
 
-        // Randomize volume and pitch
+        // Configure AudioSource
         aSource.clip = clip;
         aSource.volume = Random.Range(s.minVolume, s.maxVolume);
         aSource.pitch = Random.Range(s.minPitch, s.maxPitch);
+        aSource.loop = s.loop;
+
+        Debug.Log($"Playing {soundName} | Volume: {aSource.volume} | Pitch: {aSource.pitch}");
+
         aSource.Play();
 
-        s.currentSource = aSource; // Store reference to the current playing sound
+        s.currentSource = aSource; // Store the reference
 
+        // Destroy only if not looping
         if (!s.loop)
         {
             Destroy(tempGO, clip.length);
         }
     }
+
     public void FadeOut(string soundName, float fadeDuration = 0.5f)
     {
         Sound s = System.Array.Find(sounds, sound => sound.soundName == soundName);
