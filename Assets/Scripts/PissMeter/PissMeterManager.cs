@@ -12,8 +12,8 @@ public class PissMeterManager : MonoBehaviour
 
     void Start()
     {
-        _sliders = new Slider[4];
-        PissMeters = new PissMeter[4];
+        _sliders = new Slider[1];
+        PissMeters = new PissMeter[1];
         var players = GameObject.FindGameObjectsWithTag("Player");
         for (int runs = 0; runs < players.Length; runs++)
         {           

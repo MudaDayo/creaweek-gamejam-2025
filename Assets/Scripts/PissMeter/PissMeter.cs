@@ -7,19 +7,21 @@ public class PissMeter : MonoBehaviour
     [SerializeField] private Slider _slider;
     public int PissAmount {  get; private set; }  = 0;
 
-
-    void Start()
+    private void FindSlider()
     {
-        _slider = gameObject.GetComponent<Slider>();
-        Debug.Log(_slider.name);
+        if (_slider == null)
+        {
+            _slider = gameObject.GetComponent<Slider>();
+            Debug.Log(_slider.name);
+        }
     }
 
     public void AddPiss(int pissAmount)
     {
+        FindSlider();
+
         PissAmount += pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
-        Debug.Log(PissAmount);
-        Debug.Log(_slider.name);
         _slider.value = PissAmount;
     }
 
