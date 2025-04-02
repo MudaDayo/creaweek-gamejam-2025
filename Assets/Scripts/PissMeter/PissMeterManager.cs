@@ -12,7 +12,15 @@ public class PissMeterManager : MonoBehaviour
 
     void Start()
     {
-        PissMeters = new PissMeter[1];
+        PissMeters = new PissMeter[4];
+        for (int i = 0; i < PissMeters.Length; i++)
+        {
+            if (sliders[i] == null)
+            {
+                sliders[i] = GameObject.FindGameObjectsWithTag("PissMeter")[i].GetComponent<Slider>();
+            }
+        }
+        
         for (int runs = 0; runs < PissMeters.Length; runs++)
         {
             PissMeters[runs] = new PissMeter(sliders[runs]);
