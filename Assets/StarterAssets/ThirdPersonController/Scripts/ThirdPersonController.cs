@@ -90,8 +90,7 @@ namespace StarterAssets
         public float _recoilModifier = 0.5f;
 
         //piss
-        private GameObject _pisser3000;
-        public GameObject Pisser3000Prefab;
+        [SerializeField]private GameObject _pisser3000;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -140,7 +139,6 @@ namespace StarterAssets
 
         private void Start()
         {
-            _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -167,6 +165,7 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             HandlePissAction();
+            HandleDrinkAction();
         }
 
         private void LateUpdate()
@@ -229,24 +228,21 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
+        private void HandleDrinkAction(){
+            Debug.Log($"{gameObject.name} is drinking");
+        }
+
         private void HandlePissAction()
         {
             if (_input.piss)
             {
-                if (_pisser3000 == null)
+                if (_pisser3000 != null)
                 {
-                    _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
-                }
-
-                _pisser3000.transform.SetPositionAndRotation(
-                    transform.position + new Vector3(0f, 0.5f, 0f),
-                    Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z)
-                );
-
-                var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
-                if (particleSystem != null && !particleSystem.isPlaying)
-                {
-                    particleSystem.Play();
+                    var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
+                    if (particleSystem != null && !particleSystem.isPlaying)
+                    {
+                        particleSystem.Play();
+                    }
                 }
             }
             else if (_pisser3000 != null)
@@ -263,7 +259,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = (_input.sprint && _input.piss) ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 

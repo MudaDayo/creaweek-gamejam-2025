@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool piss;
+		public bool drink;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -48,6 +49,11 @@ namespace StarterAssets
 		{
 			PissInput(value.isPressed);
 		}
+
+		public void OnDrink(InputValue value)
+		{
+			DrinkInput(value.isPressed);
+		}
 #endif
 
 
@@ -72,6 +78,10 @@ namespace StarterAssets
 		}
 
 		public void PissInput(bool newPissState)
+		{
+			piss = newPissState;
+		}
+		public void DrinkInput(bool newPissState)
 		{
 			piss = newPissState;
 		}
