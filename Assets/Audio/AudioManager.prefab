@@ -52,6 +52,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4724e9b360696df4686e144153eb014b, type: 3}
     - {fileID: 8300000, guid: 22d3a3cab75d70c48a2cea7e230c8fc0, type: 3}
     - {fileID: 8300000, guid: 8a675689270163e47a3e97513a67b61b, type: 3}
+    loop: 0
     minVolume: 0.8
     maxVolume: 1
     minPitch: 0.95
@@ -65,6 +66,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d081b2c90b1861a4e948f8c5703715cc, type: 3}
     - {fileID: 8300000, guid: 65a724454bab3014b876c047c7c1e3e4, type: 3}
     - {fileID: 8300000, guid: 143bfdb88ab481747a7f916e6978beb1, type: 3}
+    loop: 0
     minVolume: 0.8
     maxVolume: 1
     minPitch: 0.95
@@ -78,6 +80,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e8d308bdbdc518a429862eb225cb42c7, type: 3}
     - {fileID: 8300000, guid: 1bd52d0110de85d488d8f50b82bef485, type: 3}
     - {fileID: 8300000, guid: 66ed14a89435e994e9ea66561bf9d220, type: 3}
+    loop: 0
     minVolume: 0.8
     maxVolume: 1
     minPitch: 0.95
@@ -91,15 +94,17 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a785423c16feeb04db5acf08132167e9, type: 3}
     - {fileID: 8300000, guid: 4b73d62f3b00a20499d2899b8c04ac47, type: 3}
     - {fileID: 8300000, guid: 5537eca46a0cf1a438d9ff7de0145e72, type: 3}
+    loop: 0
     minVolume: 0.8
     maxVolume: 1
     minPitch: 0.95
     maxPitch: 1.1
     lastPlayedIndex: 0
     currentSource: {fileID: 0}
-  - soundName: Music
+  - soundName: LevelMusic
     audioClips:
     - {fileID: 8300000, guid: d088663d081a9a2459256f866b531269, type: 3}
+    loop: 1
     minVolume: 1
     maxVolume: 1
     minPitch: 1

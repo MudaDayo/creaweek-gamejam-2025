@@ -10,6 +10,9 @@ public class Sound
     [Tooltip("List of AudioClips (wav/mp3 files) associated with this sound.")]
     public AudioClip[] audioClips;
 
+    [Tooltip("Should this sound loop?")]
+    public bool loop = false;
+
     [Tooltip("Minimum volume value.")]
     public float minVolume = 0.8f;
 
@@ -61,6 +64,13 @@ public class AudioManager : MonoBehaviour
         AudioClip clip = s.GetRandomClip();
         if (clip == null) return;
 
+        // If looping, reuse the same AudioSource
+        if (s.loop && s.currentSource != null)
+        {
+            s.currentSource.Play();
+            return;
+        }
+
         GameObject tempGO = new GameObject("TempAudio_" + soundName);
         AudioSource aSource = tempGO.AddComponent<AudioSource>();
 
@@ -71,7 +81,11 @@ public class AudioManager : MonoBehaviour
         aSource.Play();
 
         s.currentSource = aSource; // Store reference to the current playing sound
-        Destroy(tempGO, clip.length);
+
+        if (!s.loop)
+        {
+            Destroy(tempGO, clip.length);
+        }
     }
     public void FadeOut(string soundName, float fadeDuration = 0.5f)
     {
