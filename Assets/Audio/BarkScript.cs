@@ -24,7 +24,7 @@ public class BarkScript : MonoBehaviour
         else
         {
             // east gamepad button pressed
-            if (Input.GetKeyDown("Crouch"))
+            if (Input.GetKeyDown("joystick button 1"))
             {
                 audioManager?.PlaySound("Bark" + playerID);
             }

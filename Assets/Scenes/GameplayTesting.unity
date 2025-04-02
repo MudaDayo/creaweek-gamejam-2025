@@ -1250,6 +1250,30 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[1].maxVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[1].minVolume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[3].maxVolume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[3].minVolume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[4].maxVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[4].minVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: sounds.Array.data[4].soundName
       value: LevelMusic
       objectReference: {fileID: 0}

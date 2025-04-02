@@ -83,6 +83,9 @@ public class AudioManager : MonoBehaviour
         aSource.volume = Random.Range(s.minVolume, s.maxVolume);
         aSource.pitch = Random.Range(s.minPitch, s.maxPitch);
         aSource.loop = s.loop;
+
+        Debug.Log($"Playing {soundName} | Volume: {aSource.volume} | Pitch: {aSource.pitch}");
+
         aSource.Play();
 
         s.currentSource = aSource; // Store the reference

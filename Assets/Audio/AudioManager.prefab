@@ -53,8 +53,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 22d3a3cab75d70c48a2cea7e230c8fc0, type: 3}
     - {fileID: 8300000, guid: 8a675689270163e47a3e97513a67b61b, type: 3}
     loop: 0
-    minVolume: 0.8
-    maxVolume: 1
+    minVolume: 1
+    maxVolume: 1.2
     minPitch: 0.95
     maxPitch: 1.1
     lastPlayedIndex: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 65a724454bab3014b876c047c7c1e3e4, type: 3}
     - {fileID: 8300000, guid: 143bfdb88ab481747a7f916e6978beb1, type: 3}
     loop: 0
-    minVolume: 0.8
-    maxVolume: 1
+    minVolume: 0
+    maxVolume: 0
     minPitch: 0.95
     maxPitch: 1.1
     lastPlayedIndex: 0
