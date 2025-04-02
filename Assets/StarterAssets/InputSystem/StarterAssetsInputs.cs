@@ -13,6 +13,8 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool piss;
+		public bool drink;
+		public bool bark;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -48,6 +50,16 @@ namespace StarterAssets
 		{
 			PissInput(value.isPressed);
 		}
+
+		public void OnDrink(InputValue value)
+		{
+			DrinkInput(value.isPressed);
+		}
+
+		public void OnBark(InputValue value)
+		{
+			BarkInput(value.isPressed);
+		}
 #endif
 
 
@@ -75,7 +87,15 @@ namespace StarterAssets
 		{
 			piss = newPissState;
 		}
+		public void DrinkInput(bool newDrinkState)
+		{
+			drink = newDrinkState;
+		}
 
+		public void BarkInput(bool newBarkState)
+		{
+			bark = newBarkState;
+		}
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);

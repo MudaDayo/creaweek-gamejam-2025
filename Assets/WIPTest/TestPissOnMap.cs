@@ -5,16 +5,26 @@ public class TestPissOnMap : MonoBehaviour
     private Texture2D _tex;
     public int width = 2048;
     public int height = 2048;
+
+    private float timer = 0;
     void Start()
     {
         _tex = new Texture2D(width, height, TextureFormat.RGBA32, false);
         GetComponent<Renderer>().material.SetTexture("_Map", _tex);
+
+        ClearPiss();
     }
-    void Update()
-    {
-        //Vector2 randPos = new Vector2(Random.Range(0, width), Random.Range(0, height));
-        //DrawCircle(randPos, 50, new Color(1, 0, 0, 1));
-    }
+    //void Update()
+    //{
+    //    timer += Time.deltaTime;
+
+    //    if (timer > 0.5f)
+    //    {
+    //        Vector2 randPos = new Vector2(Random.Range(0, width), Random.Range(0, height));
+    //        DrawCircle(randPos, 50, new Color(1, 0, 0, 0));
+    //        timer = 0;
+    //    }
+    //}
 
     public void ClearPiss()
     {
@@ -22,7 +32,7 @@ public class TestPissOnMap : MonoBehaviour
         {
             for (int x = 0; x < width; x++)
             {
-                _tex.SetPixel(x, y, new Color(0, 0, 0, 0));
+                _tex.SetPixel(x, y, new Color(0, 0, 0, 1));
             }
         }
     }

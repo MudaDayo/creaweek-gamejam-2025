@@ -87,11 +87,18 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        [SerializeField] private AudioSource _audioSource;
+
         public float _recoilModifier = 0.5f;
+        public int _playerIndex = 1; // 1-4
 
         //piss
-        private GameObject _pisser3000;
-        public GameObject Pisser3000Prefab;
+        [SerializeField]private GameObject _pisser3000;
+        [SerializeField]private GameObject _pisserTurbo;
+        [SerializeField]private PissMeterManager _pissMeterManager;
+
+        [SerializeField]private int _pissAmount = 1;
+        [SerializeField]private int _sprintPissRatio = 2; // 2x piss when sprinting
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -140,7 +147,9 @@ namespace StarterAssets
 
         private void Start()
         {
-            _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+            _pissMeterManager = GameObject.FindGameObjectWithTag("PissMeterManager").GetComponent<PissMeterManager>();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -167,6 +176,8 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             HandlePissAction();
+            HandleDrinkAction();
+            Bark();
         }
 
         private void LateUpdate()
@@ -228,29 +239,46 @@ namespace StarterAssets
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
         }
+        private void Bark(){
+            if(_input.bark){
+                _audioSource.Play();
+            }
+        }
+        private void HandleDrinkAction(){
+            if(_input.drink){            
+                _pissMeterManager.AddPissToMeter(100, _playerIndex - 1);
+                Debug.Log("Drinking Piss!");
+}
+        }
 
         private void HandlePissAction()
         {
+            if((!_input.sprint && _pisserTurbo.GetComponent<ParticleSystem>().isPlaying )|| _input.move == Vector2.zero){
+                    _pisserTurbo.GetComponent<ParticleSystem>().Stop();
+            }
+
             if (_input.piss)
             {
-                if (_pisser3000 == null)
-                {
-                    _pisser3000 = Instantiate(Pisser3000Prefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+                int pissAmount = _pissAmount;
+                if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
+                        _pisserTurbo.GetComponent<ParticleSystem>().Play();
+                        pissAmount *= _sprintPissRatio;
                 }
 
-                _pisser3000.transform.SetPositionAndRotation(
-                    transform.position + new Vector3(0f, 0.5f, 0f),
-                    Quaternion.Euler(transform.eulerAngles.x - 15f, transform.eulerAngles.y, transform.eulerAngles.z)
-                );
+                _pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
 
-                var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
-                if (particleSystem != null && !particleSystem.isPlaying)
+                if (_pisser3000 != null)
                 {
-                    particleSystem.Play();
+                    var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
+                    if (particleSystem != null && !particleSystem.isPlaying)
+                    {
+                        particleSystem.Play();
+                    }
                 }
             }
             else if (_pisser3000 != null)
             {
+                _pisserTurbo.GetComponent<ParticleSystem>().Stop();
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem != null && particleSystem.isPlaying)
                 {
@@ -263,7 +291,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = (_input.sprint && _input.piss) ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
