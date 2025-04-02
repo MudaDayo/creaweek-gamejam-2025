@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2133441065899699171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4565137913797197129}
+  - component: {fileID: 940012377448947900}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4565137913797197129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133441065899699171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940012377448947900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133441065899699171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af17f372e197e9a40afce131ae691a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: Bark1
+    audioClips:
+    - {fileID: 8300000, guid: 31716395a23153041a7fe4a862edec56, type: 3}
+    - {fileID: 8300000, guid: d58ab279a07401748b5340505abf8fbb, type: 3}
+    - {fileID: 8300000, guid: 4724e9b360696df4686e144153eb014b, type: 3}
+    - {fileID: 8300000, guid: 22d3a3cab75d70c48a2cea7e230c8fc0, type: 3}
+    - {fileID: 8300000, guid: 8a675689270163e47a3e97513a67b61b, type: 3}
+    loop: 0
+    minVolume: 0.8
+    maxVolume: 1
+    minPitch: 0.95
+    maxPitch: 1.1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: Bark2
+    audioClips:
+    - {fileID: 8300000, guid: ffd33a7e01995864499e34bc8aa5e86e, type: 3}
+    - {fileID: 8300000, guid: e2149c1c17973c147a79914db6818709, type: 3}
+    - {fileID: 8300000, guid: d081b2c90b1861a4e948f8c5703715cc, type: 3}
+    - {fileID: 8300000, guid: 65a724454bab3014b876c047c7c1e3e4, type: 3}
+    - {fileID: 8300000, guid: 143bfdb88ab481747a7f916e6978beb1, type: 3}
+    loop: 0
+    minVolume: 0.8
+    maxVolume: 1
+    minPitch: 0.95
+    maxPitch: 1.1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: Bark3
+    audioClips:
+    - {fileID: 8300000, guid: f5053cd1a0c2c3940b2da2720650f06e, type: 3}
+    - {fileID: 8300000, guid: 223bcf1019b9b51458d979d70439a1fc, type: 3}
+    - {fileID: 8300000, guid: e8d308bdbdc518a429862eb225cb42c7, type: 3}
+    - {fileID: 8300000, guid: 1bd52d0110de85d488d8f50b82bef485, type: 3}
+    - {fileID: 8300000, guid: 66ed14a89435e994e9ea66561bf9d220, type: 3}
+    loop: 0
+    minVolume: 0.8
+    maxVolume: 1
+    minPitch: 0.95
+    maxPitch: 1.1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: Bark4
+    audioClips:
+    - {fileID: 8300000, guid: 2aea1426d12dc7f4abd27eae6d703744, type: 3}
+    - {fileID: 8300000, guid: 5da3175421b30bf4894e88ca774cc206, type: 3}
+    - {fileID: 8300000, guid: a785423c16feeb04db5acf08132167e9, type: 3}
+    - {fileID: 8300000, guid: 4b73d62f3b00a20499d2899b8c04ac47, type: 3}
+    - {fileID: 8300000, guid: 5537eca46a0cf1a438d9ff7de0145e72, type: 3}
+    loop: 0
+    minVolume: 0.8
+    maxVolume: 1
+    minPitch: 0.95
+    maxPitch: 1.1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
+  - soundName: LevelMusic
+    audioClips:
+    - {fileID: 8300000, guid: d088663d081a9a2459256f866b531269, type: 3}
+    loop: 1
+    minVolume: 1
+    maxVolume: 1
+    minPitch: 1
+    maxPitch: 1
+    lastPlayedIndex: 0
+    currentSource: {fileID: 0}
