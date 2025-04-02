@@ -7,23 +7,21 @@ public class PissMeterManager : MonoBehaviour
 {
     public PissMeter[] PissMeters {  get; private set; }
 
-    [SerializeField] private Slider[] sliders;
+    private Slider[] _sliders;
     private int _maxPiss = 100;
 
     void Start()
     {
-        PissMeters = new PissMeter[4];
-        for (int i = 0; i < PissMeters.Length; i++)
+        _sliders = new Slider[4];
+        for (int runs = 0; runs < _sliders.Length; runs++)
         {
-            if (sliders[i] == null)
-            {
-                sliders[i] = GameObject.FindGameObjectsWithTag("PissMeter")[i].GetComponent<Slider>();
-            }
+            _sliders[runs] = GameObject.Find($"Player{runs + 1}Canvas").GetComponentInChildren<Slider>();
         }
-        
+
+        PissMeters = new PissMeter[4];
         for (int runs = 0; runs < PissMeters.Length; runs++)
         {
-            PissMeters[runs] = new PissMeter(sliders[runs]);
+            PissMeters[runs] = new PissMeter(_sliders[runs]);
         }
 
         FillAllPissMeters();

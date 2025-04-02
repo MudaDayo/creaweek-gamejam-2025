@@ -968,9 +968,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2729894250808343081, guid: 24c7a2bea1f205243b91e66aa6eedb3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7797905330188234372, guid: 24c7a2bea1f205243b91e66aa6eedb3d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1066,12 +1070,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2515883101133825865, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515883101133825865, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7214220496199836438, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
       propertyPath: m_Name
       value: Player1Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411975200486253065, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
+      propertyPath: m_Value
+      value: 64.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1170,9 +1182,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player4Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7449186243708747338, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7694024742007456469, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1271,9 +1287,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player3Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1949345893568226507, guid: cca136c9d80219845b03a9e131a3a911, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4503898582108809079, guid: cca136c9d80219845b03a9e131a3a911, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
