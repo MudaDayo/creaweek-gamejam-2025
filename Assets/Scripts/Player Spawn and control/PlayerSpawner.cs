@@ -32,8 +32,6 @@ public class PlayerSpawner : MonoBehaviour
         {
             GameObject prefab = prefabs[i % prefabs.Length];
             Transform spawnPoint = spawnPoints[i % spawnPoints.Length];
-            Vector3 offset = GetOffset(i);
-
             InputDevice device = null;
             string controlScheme = "KeyboardMouse";
 
@@ -62,7 +60,7 @@ public class PlayerSpawner : MonoBehaviour
                 usedDevices.Add(device);
             }
 
-            SpawnPlayer(prefab, i, controlScheme, device, spawnPoint.position + offset, spawnPoint.rotation);
+            SpawnPlayer(prefab, i, controlScheme, device, spawnPoints[i % spawnPoints.Length].position, spawnPoints[i % spawnPoints.Length].rotation);
         }
     }
 
@@ -74,15 +72,5 @@ public class PlayerSpawner : MonoBehaviour
         // Debug log to track player assignments
         string deviceName = device != null ? device.displayName : "None";
         Debug.Log($"Player {playerIndex} spawned with control scheme '{controlScheme}' and device '{deviceName}'.");
-    }
-
-    private Vector3 GetOffset(int playerIndex)
-    {
-        return playerIndex switch
-        {
-            2 => Vector3.right * 2, // Player 3 offset
-            3 => Vector3.left * 2,  // Player 4 offset
-            _ => Vector3.zero,
-        };
     }
 }
