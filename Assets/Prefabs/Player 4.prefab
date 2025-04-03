@@ -62,6 +62,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3923465968828624541, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2443313747718786445}
+    - target: {fileID: 3923465968828624541, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
       propertyPath: playerID
       value: 4
       objectReference: {fileID: 0}
@@ -230,6 +234,11 @@ PrefabInstance:
 --- !u!4 &1433499619101781923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8968359493017985170, guid: bdbac4f4eae45cc469a18364aa3aafce, type: 3}
+  m_PrefabInstance: {fileID: 8039720555457204017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2443313747718786445 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -3568337619635567940, guid: bdbac4f4eae45cc469a18364aa3aafce, type: 3}
   m_PrefabInstance: {fileID: 8039720555457204017}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8410073551121591758

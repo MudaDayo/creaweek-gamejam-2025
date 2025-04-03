@@ -101,16 +101,80 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chiuaua
       objectReference: {fileID: 0}
+    - target: {fileID: 8500869915866041053, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5046748926995605073, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7868815019226908710}
+    - targetCorrespondingSourceObject: {fileID: 5765752681041700632, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6726605260832789181}
   m_SourcePrefab: {fileID: 100100000, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
 --- !u!4 &1996764065772422869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1583113293699880392, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
   m_PrefabInstance: {fileID: 1030681588088656669}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5207304766671517004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5046748926995605073, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
+  m_PrefabInstance: {fileID: 1030681588088656669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7868815019226908710
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207304766671517004}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f99bd1c5604a45469f3353179a665b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6794145073034458117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5765752681041700632, guid: 1152ca9548094ea4fba9519e651f0d84, type: 3}
+  m_PrefabInstance: {fileID: 1030681588088656669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6726605260832789181
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794145073034458117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f99bd1c5604a45469f3353179a665b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4192218948523772016
 PrefabInstance:
   m_ObjectHideFlags: 0

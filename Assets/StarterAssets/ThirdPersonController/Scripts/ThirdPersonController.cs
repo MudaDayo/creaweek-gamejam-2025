@@ -82,6 +82,13 @@ namespace StarterAssets
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
+        //animation stuff
+        public bool isRunning;
+        public bool isPissing;
+        public bool isDrinking;
+
+        public Animator animator;
+
 
         // player
         private float _speed;
@@ -185,6 +192,14 @@ namespace StarterAssets
             HandlePissAction();
             HandleDrinkAction();
             Bark();
+            HandleAnimation();
+        }
+
+        public void HandleAnimation(){
+            Debug.Log(animator);
+            animator.SetBool("isRunning", isRunning);
+            animator.SetBool("isPissing", isPissing);
+            animator.SetBool("isDrinking", isDrinking);
         }
 
         private void LateUpdate()
@@ -277,9 +292,10 @@ namespace StarterAssets
         }
 
         private void HandleDrinkAction(){
-            if(_input.drink && canDrink){            
+            if(_input.drink && canDrink){
+                isDrinking = true;            
                 _pissMeterManager.AddPissToMeter(_pissAmount * 2, _playerIndex - 1);
-}
+}else isDrinking = false;
         }
 
         private void HandlePissAction()
@@ -291,6 +307,7 @@ namespace StarterAssets
 
             if (_input.piss && _pissMeterManager.CheckPissMeter(_playerIndex - 1) >0)
             {
+                isPissing = true;
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
                         _pisserTurbo.GetComponent<ParticleSystem>().Play();
                 }
@@ -316,6 +333,7 @@ namespace StarterAssets
             }
             else if (_pisser3000 != null)
             {
+                isPissing = false;
                 _pisserTurbo.GetComponent<ParticleSystem>().Stop();
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem != null && particleSystem.isPlaying)
@@ -336,7 +354,10 @@ namespace StarterAssets
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
-            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+
+
+            if (_input.move == Vector2.zero) {targetSpeed = 0.0f; isRunning = false;}
+            else isRunning = true;
             //gameObject.GetComponent<Rigidbody>().AddForce(transform.right * _input.move.x * _recoilModifier, ForceMode.Impulse);
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;

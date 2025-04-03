@@ -102,6 +102,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48169dbf5efc0f748bd27b9bc8f48fbd, type: 3}
+--- !u!95 &1812554386231288462 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -8294487927471185591, guid: 48169dbf5efc0f748bd27b9bc8f48fbd, type: 3}
+  m_PrefabInstance: {fileID: 1568224301284590535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6402089111168143338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5556238597942070317, guid: 48169dbf5efc0f748bd27b9bc8f48fbd, type: 3}
@@ -275,6 +280,10 @@ PrefabInstance:
       propertyPath: mapColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3923465968828624541, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1812554386231288462}
     - target: {fileID: 3923465968828624541, guid: 07ac05dac233b5146bcfdd858e82af81, type: 3}
       propertyPath: playerID
       value: 2
