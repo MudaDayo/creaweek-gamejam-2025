@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3554014068172883059}
   - component: {fileID: 6606636779182121492}
   - component: {fileID: 971052226804309786}
-  m_Layer: 0
+  - component: {fileID: 949712643793872180}
+  m_Layer: 11
   m_Name: Piss Mat 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 20, z: 1}
+  m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1acb9bf05756eb348a058be556abe88b, type: 2}
+  - {fileID: 2100000, guid: 6fe00646243b21244a5b09dbaa5cfddd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,5 +122,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f097ad42e9c8845bbb88b3b680fe1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 4000
-  height: 2000
+  width: 400
+  height: 400
+--- !u!114 &949712643793872180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5006267513117134843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d910e580ae8c574a8d56cf706cb07eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 3554014068172883059}
+  refreshRate: 0.5
