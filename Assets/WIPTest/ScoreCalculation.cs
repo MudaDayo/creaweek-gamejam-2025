@@ -21,11 +21,6 @@ public class ScoreCalculation : MonoBehaviour
 
         image = rend.material.GetTexture("_Map") as Texture2D;
 
-        // readable fix?
-        Texture2D readableImage = new Texture2D(image.width, image.height, TextureFormat.RGBA32, false);
-        Graphics.CopyTexture(image, readableImage);
-        image = readableImage;
-
 
         if (image == null)
         {
