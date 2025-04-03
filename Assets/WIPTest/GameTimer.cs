@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GameTimer : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class GameTimer : MonoBehaviour
         {
             timeRemaining = 0;
             timerRunning = false;
-            gameOverCanvas.enabled = true;
+            gameOverCanvas.GetComponent<EndScreen>().showEndScreen();
         }
     }
 

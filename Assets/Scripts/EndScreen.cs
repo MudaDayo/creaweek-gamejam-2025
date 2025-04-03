@@ -26,6 +26,8 @@ public class EndScreen : MonoBehaviour
     }
     public void showEndScreen()
     {
+        Time.timeScale = 0;
+        endScreen.enabled = true;
         int winner = scoreCalculation.GetFirstPlayer();
         string player = "";
         switch (winner)
@@ -56,9 +58,8 @@ public class EndScreen : MonoBehaviour
                 break;
         }
 
-        endScreen.enabled = true;
-        scoreText1.text = $"{player} {scoreCalculation.GetFirstPlayer()} is the MVPee";
-        scoreText2.text = $"{Mathf.RoundToInt(scoreCalculation.GetHighestPercent())}%";
+        scoreText1.text = $"{player} is the MVPee";
+        scoreText2.text = $"{Mathf.RoundToInt(scoreCalculation.GetHighestPercent())}% COVERED";
 
     }
 }
