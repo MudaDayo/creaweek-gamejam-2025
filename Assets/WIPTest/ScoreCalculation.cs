@@ -21,6 +21,12 @@ public class ScoreCalculation : MonoBehaviour
 
         image = rend.material.GetTexture("_Map") as Texture2D;
 
+        // readable fix?
+        Texture2D readableImage = new Texture2D(image.width, image.height, TextureFormat.RGBA32, false);
+        Graphics.CopyTexture(image, readableImage);
+        image = readableImage;
+
+
         if (image == null)
         {
             Debug.LogError("No image assigned!");
@@ -61,7 +67,7 @@ public class ScoreCalculation : MonoBehaviour
     public Vector4 GetPercents()
     {
         percents = (scores / totalPixels) * 100f;
-        //Debug.Log("score percents: " + percents);
+        Debug.Log("score percents: " + percents);
         return percents;
     }
 

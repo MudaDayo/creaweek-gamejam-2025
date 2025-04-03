@@ -196,7 +196,7 @@ namespace StarterAssets
         }
 
         public void HandleAnimation(){
-            Debug.Log(animator);
+            //Debug.Log(animator);
             animator.SetBool("isRunning", isRunning);
             animator.SetBool("isPissing", isPissing);
             animator.SetBool("isDrinking", isDrinking);
