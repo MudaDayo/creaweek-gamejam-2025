@@ -4974,6 +4974,10 @@ PrefabInstance:
       value: Timer
       objectReference: {fileID: 0}
     - target: {fileID: 7660532102072240383, guid: d47fab7cd20d18445af749ab892e28a9, type: 3}
+      propertyPath: startTime
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660532102072240383, guid: d47fab7cd20d18445af749ab892e28a9, type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1509516486}
