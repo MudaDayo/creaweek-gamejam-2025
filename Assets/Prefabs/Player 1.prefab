@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 7411975200486253065, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 3094028356555606997}
+      objectReference: {fileID: 4556940246681186650}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -175,10 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 6697240501639654009}
+  PissAmount: 100
   _thirdPersonController: {fileID: 5812017441620031944}
---- !u!114 &3094028356555606997 stripped
+--- !u!114 &4556940246681186650 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1215394147403318181, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 364864063051086122, guid: 66f060681ac760b4bbb6c3d5f36a3ec2, type: 3}
   m_PrefabInstance: {fileID: 4192218948523772016}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -243,9 +243,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7048178175711017779, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7449186243708747338, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
       propertyPath: m_Name
       value: Player4Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694024742007456469, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7694024742007456469, guid: 6127c3bd08f989b48b9176a5448c9008, type: 3}
       propertyPath: m_AnchorMax.y
@@ -288,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1542128705770936061}
+  PissAmount: 100
   _thirdPersonController: {fileID: 5812017441620031944}
 --- !u!224 &2749915435009689668 stripped
 RectTransform:
