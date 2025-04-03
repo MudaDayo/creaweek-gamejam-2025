@@ -1122,6 +1122,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1515353144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7390983989447559730, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_Name
+      value: level
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5438166
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25752676
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 48.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969352526891968785, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 460b0c92db4746d46bd67d5f3afb0b3f, type: 3}
 --- !u!1 &1683463714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1304,14 @@ PrefabInstance:
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: sounds.Array.data[9].minPitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[4].maxVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
+      propertyPath: sounds.Array.data[4].minVolume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 940012377448947900, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: sounds.Array.data[9].maxVolume
@@ -1634,3 +1715,4 @@ SceneRoots:
   - {fileID: 750348776}
   - {fileID: 1695939733}
   - {fileID: 624192292}
+  - {fileID: 1515353144}

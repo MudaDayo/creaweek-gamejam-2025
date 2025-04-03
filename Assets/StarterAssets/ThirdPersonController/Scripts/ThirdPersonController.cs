@@ -306,6 +306,7 @@ namespace StarterAssets
                     var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                     if (particleSystem != null && !particleSystem.isPlaying)
                     {
+                        audioManager?.PlaySound("piss" + _playerIndex);
                         particleSystem.Play();
 
                         // normal pissing
@@ -319,6 +320,7 @@ namespace StarterAssets
                 var particleSystem = _pisser3000.GetComponent<ParticleSystem>();
                 if (particleSystem != null && particleSystem.isPlaying)
                 {
+                    audioManager?.FadeOut("piss" + _playerIndex, 0.3f);
                     particleSystem.Stop();
                 }
             }
