@@ -48,6 +48,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GrassTex:
+        m_Texture: {fileID: 2800000, guid: 9273b0666f47d5e4e86165bf96cb7404, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -113,7 +117,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeightBump: 0.01
+    - _HeightBump: 0
     - _Metallic: 0
     - _NoiseScale: 29.83
     - _NormalStrength: 0.01
@@ -133,8 +137,8 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Thickness: 1
-    - _WaveHeight: 0.1
-    - _WaveScale: 50
+    - _WaveHeight: 0.03
+    - _WaveScale: 37.31
     - _WaveSpeed: 0.015
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -152,7 +156,7 @@ Material:
     - _Color3: {r: 0.079782486, g: 0, b: 1, a: 0}
     - _Color4: {r: 0.9943414, g: 0, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PColor1: {r: 0.8837833, g: 0.8867924, b: 0.25265208, a: 1}
+    - _PColor1: {r: 0.77294, g: 0.8862745, b: 0.25098044, a: 1}
     - _PColor2: {r: 1, g: 0.962364, b: 0.52641505, a: 1}
     - _PColor3: {r: 0.8415094, g: 0.6022606, b: 0.03651824, a: 1}
     - _PColor4: {r: 0.78867924, g: 0.69125915, b: 0, a: 1}
@@ -160,6 +164,7 @@ Material:
     - _ScaleRatio: {r: 2, g: 1, b: 0, a: 0}
     - _Smoothness: {r: 0, g: 0.4, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 8, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1850043214553334003
