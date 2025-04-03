@@ -137,13 +137,13 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Thickness: 1
-    - _WaveHeight: 0.03
+    - _WaveHeight: 0.019
     - _WaveScale: 37.31
     - _WaveSpeed: 0.015
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _border: 0.01
-    - _borderThickness: 0.005
+    - _borderThickness: 0.01
     m_Colors:
     - _BColor1: {r: 0.85882354, g: 0.2784314, b: 0.41960785, a: 1}
     - _BColor2: {r: 0.2784314, g: 0.85882354, b: 0.8392157, a: 1}
