@@ -978,11 +978,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 971052226804309786, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
       propertyPath: width
-      value: 800
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 971052226804309786, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
       propertyPath: height
-      value: 800
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3554014068172883059, guid: a8bb40962b5632c4faf97c0faaecd678, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6358,7 +6358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2133441065899699171, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565137913797197129, guid: 7cdf8a2a653490b47ae323dab53d95a0, type: 3}
       propertyPath: m_LocalPosition.x
