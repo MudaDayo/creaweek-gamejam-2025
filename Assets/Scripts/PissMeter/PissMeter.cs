@@ -30,7 +30,7 @@ public class PissMeter : MonoBehaviour
         }
     }
 
-    public void AddPiss(int pissAmount)
+    public void AddPiss(float pissAmount)
     {
         PissAmount += pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
@@ -39,7 +39,7 @@ public class PissMeter : MonoBehaviour
 
     public void RemovePiss(float pissAmount)
     {
-        Debug.Log($"Removing {pissAmount} from {this}");
+        //Debug.Log($"Removing {pissAmount} from {this}");
         PissAmount -= pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
         _slider.value = PissAmount;

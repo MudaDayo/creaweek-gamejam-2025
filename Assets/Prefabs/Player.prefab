@@ -537,14 +537,14 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  _audioSource: {fileID: 4940256480927053462}
   _recoilModifier: 12
   _playerIndex: 1
   _pisser3000: {fileID: 6265459043413439739}
   _pisserTurbo: {fileID: 5989440627914367862}
-  _pissAmount: 0.25
-  _sprintPissRatio: 2
+  _pissAmount: 0.125
+  _sprintPissRatio: 8
   _camera: {fileID: 1065478515086491945}
+  _canBark: 1
 --- !u!114 &7141870628586388901
 MonoBehaviour:
   m_ObjectHideFlags: 0
