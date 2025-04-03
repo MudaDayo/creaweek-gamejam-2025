@@ -54,7 +54,7 @@ public class ScoreCalculation : MonoBehaviour
             pixels.Count(p => p.a == 0)
         );
 
-        //Debug.Log("scores: " + scores);
+        Debug.Log("scores: " + scores);
 
         return scores;
     }
