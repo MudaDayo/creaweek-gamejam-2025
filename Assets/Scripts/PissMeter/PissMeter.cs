@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
@@ -5,21 +6,21 @@ using static UnityEngine.Rendering.DebugUI;
 public class PissMeter : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    public float PissAmount {  get; private set; }  = 0;
-
-    private void FindSlider()
+    [SerializeField] private float PissAmount {  get; set; }  = 0;
+    private PissMeterManager _pissMeterManager;
+    public ThirdPersonController _thirdPersonController;
+    private void Start()
     {
-        if (_slider == null)
+        _pissMeterManager = GameObject.FindGameObjectWithTag("PissMeterManager")?.GetComponent<PissMeterManager>();
+        _pissMeterManager._sliders[_thirdPersonController.playerID - 1] = _slider;
+        if (_pissMeterManager == null)
         {
-            _slider = gameObject.GetComponent<Slider>();
-            Debug.Log(_slider.name);
+            Debug.LogError("PissMeterManager not found in the scene.");
         }
     }
 
     public void AddPiss(int pissAmount)
     {
-        FindSlider();
-
         PissAmount += pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
         _slider.value = PissAmount;

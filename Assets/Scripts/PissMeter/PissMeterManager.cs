@@ -10,25 +10,30 @@ public class PissMeterManager : MonoBehaviour
     public Slider[] _sliders;
     private int _maxPiss = 100;
 
-    void Awake()
+    void Start()
     {
         _sliders = new Slider[4];
         PissMeters = new PissMeter[4];
         var players = GameObject.FindGameObjectsWithTag("Player");
-        for (int runs = 0; runs < players.Length; runs++)
-        {           
-            var pissMeter = players[runs].transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
-            _sliders[runs] = pissMeter.GetComponent<Slider>();
-            pissMeter.AddComponent<PissMeter>();
+        // for (int runs = 0; runs < players.Length; runs++)
+        // {           
+        //     var pissMeter = players[runs].transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
+        //     _sliders[runs] = pissMeter.GetComponent<Slider>();
+        //     pissMeter.AddComponent<PissMeter>();
 
-            PissMeters[runs] = pissMeter.GetComponent<PissMeter>();
-        }
-
+        //     PissMeters[runs] = pissMeter.GetComponent<PissMeter>();
+        // }
+        
         FillAllPissMeters();
     }
 
     public void FillAllPissMeters()
     {
+        if (PissMeters == null || PissMeters.Length == 0)
+        {
+            Debug.LogError("PissMeters array is not initialized or empty.");
+            return;
+        }
         foreach (var meter in PissMeters)
         {
             meter.AddPiss(_maxPiss);
