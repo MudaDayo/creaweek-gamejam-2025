@@ -19,7 +19,6 @@ public class PissMeterManager : MonoBehaviour
 
     public void RemovePissFromMeter(float pissAmount, int pissMeterIndex)
 {
-    Debug.Log($"Removing {pissAmount} from PissMeter at index {pissMeterIndex}");
     PissMeters[pissMeterIndex].RemovePiss(pissAmount);
 }
 

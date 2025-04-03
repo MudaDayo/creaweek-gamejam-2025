@@ -14,6 +14,8 @@ public class PissMeter : MonoBehaviour
         PissAmount = 100f;
         _pissMeterManager = GameObject.FindGameObjectWithTag("PissMeterManager")?.GetComponent<PissMeterManager>();
         _pissMeterManager._sliders[_thirdPersonController.playerID - 1] = _slider;
+
+        _pissMeterManager.PissMeters[_thirdPersonController.playerID - 1] = this;
         if (_pissMeterManager == null)
         {
             Debug.LogError("PissMeterManager not found in the scene.");

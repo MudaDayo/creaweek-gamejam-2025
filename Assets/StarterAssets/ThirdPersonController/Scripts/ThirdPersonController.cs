@@ -282,7 +282,7 @@ namespace StarterAssets
                     
                 }
 
-                //_pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
+                _pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
 
                 if (_pisser3000 != null)
                 {
