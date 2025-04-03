@@ -4,7 +4,7 @@ using UnityEngine;
 public class EndScreen : MonoBehaviour
 {
     [SerializeField] private Canvas endScreen;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText1, scoreText2;
     [SerializeField] private ScoreCalculation scoreCalculation;
     [Header("Name of game scene")]
     [SerializeField] private string sceneName;
@@ -21,6 +21,7 @@ public class EndScreen : MonoBehaviour
     public void showEndScreen()
     {
         endScreen.enabled = true;
-        scoreText.text = "Score: " + scoreCalculation.GetPercents();
+        scoreText1.text = $"Player {scoreCalculation.GetFirstPlayer()} is the MVPee";
+        scoreText2.text = $"{Mathf.RoundToInt(scoreCalculation.GetHighestPercent())}%";
     }
 }
