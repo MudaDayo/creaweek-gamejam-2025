@@ -3,7 +3,17 @@ guid: b7a1bcf3197aac44fb06207aa552ac2a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collars
+    second: {fileID: 2100000, guid: 7331fded08a57f84a87765f181f73690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TT_checker_512x512_UV_GRID
+    second: {fileID: 2100000, guid: 7e4d6e8e3a1459846928f58a35996d0c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

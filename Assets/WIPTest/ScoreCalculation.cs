@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -62,5 +63,33 @@ public class ScoreCalculation : MonoBehaviour
         percents = (scores / totalPixels) * 100f;
         //Debug.Log("score percents: " + percents);
         return percents;
+    }
+
+    public int GetFirstPlayer()
+    {
+        // get biggest value from scores
+        float maxValue = GetHighestPercent();
+
+        if (percents.x == maxValue)
+            return 1;
+        else if (percents.y == maxValue)
+            return 2;
+        else if (percents.z == maxValue)
+            return 3;
+        else return 4;
+    }
+
+    public float GetHighestPercent()
+    {
+        float maxValue = percents.x;
+
+        if (percents.y > maxValue)
+            maxValue = percents.y;
+        if (percents.z > maxValue)
+            maxValue = percents.z;
+        if (percents.w > maxValue)
+            maxValue = percents.w;
+
+        return maxValue;
     }
 }
