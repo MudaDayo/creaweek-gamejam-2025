@@ -51,4 +51,9 @@ public class PissMeter : MonoBehaviour
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
         _slider.value = PissAmount;
     }
+
+    public int GetPiss()
+    {
+        return (int)PissAmount;
+    }
 }

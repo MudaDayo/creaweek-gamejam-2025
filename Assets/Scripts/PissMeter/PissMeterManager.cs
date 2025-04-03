@@ -26,4 +26,8 @@ public void AddPissToMeter(int pissAmount, int pissMeterIndex)
 {
     PissMeters[pissMeterIndex].AddPiss(pissAmount);
 }
+
+public int CheckPissMeter(int pissMeterIndex){
+    return (int)PissMeters[pissMeterIndex].GetPiss();
+}
 }

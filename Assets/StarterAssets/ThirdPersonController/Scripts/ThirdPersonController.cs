@@ -270,7 +270,7 @@ namespace StarterAssets
                     _pisserTurbo.GetComponent<ParticleSystem>().Stop();
             }
 
-            if (_input.piss)
+            if (_input.piss && _pissMeterManager.CheckPissMeter(_playerIndex - 1) >0)
             {
                 float pissAmount = _pissAmount;
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
