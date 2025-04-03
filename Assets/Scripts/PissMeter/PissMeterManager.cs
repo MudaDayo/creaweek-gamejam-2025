@@ -22,7 +22,7 @@ public class PissMeterManager : MonoBehaviour
     PissMeters[pissMeterIndex].RemovePiss(pissAmount);
 }
 
-public void AddPissToMeter(int pissAmount, int pissMeterIndex)
+public void AddPissToMeter(float pissAmount, int pissMeterIndex)
 {
     PissMeters[pissMeterIndex].AddPiss(pissAmount);
 }

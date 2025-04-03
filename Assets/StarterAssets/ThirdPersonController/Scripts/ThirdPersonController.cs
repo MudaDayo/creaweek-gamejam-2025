@@ -94,6 +94,8 @@ namespace StarterAssets
         public float _recoilModifier = 0.5f;
         public int _playerIndex = 1; // 1-4
 
+        private bool canDrink = false;
+
         //piss
         [SerializeField]private GameObject _pisser3000;
         [SerializeField]private GameObject _pisserTurbo;
@@ -258,28 +260,43 @@ namespace StarterAssets
                 _canBark = true;
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Drinkable"))
+            {
+                canDrink = true;
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Drinkable"))
+            {
+                canDrink = false;
+            }
+        }
+
         private void HandleDrinkAction(){
-            if(_input.drink){            
-                _pissMeterManager.AddPissToMeter(100, _playerIndex - 1);
+            if(_input.drink && canDrink){            
+                _pissMeterManager.AddPissToMeter(_pissAmount * 2, _playerIndex - 1);
 }
         }
 
         private void HandlePissAction()
         {
+            float pissAmount = _pissAmount;
             if((!_input.sprint && _pisserTurbo.GetComponent<ParticleSystem>().isPlaying )|| _input.move == Vector2.zero){
                     _pisserTurbo.GetComponent<ParticleSystem>().Stop();
             }
 
             if (_input.piss && _pissMeterManager.CheckPissMeter(_playerIndex - 1) >0)
             {
-                float pissAmount = _pissAmount;
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
                         _pisserTurbo.GetComponent<ParticleSystem>().Play();
-                        pissAmount *= _sprintPissRatio;
+                }
 
-                    //sprint pissing
-
-                    
+                if(_input.sprint){
+                    pissAmount *= _sprintPissRatio;
                 }
 
                 _pissMeterManager.RemovePissFromMeter(pissAmount, _playerIndex - 1);
