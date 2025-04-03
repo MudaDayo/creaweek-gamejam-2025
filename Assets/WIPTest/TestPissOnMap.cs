@@ -7,7 +7,7 @@ public class TestPissOnMap : MonoBehaviour
     public int width = 2048;
     public int height = 2048;
 
-    private float timer = 0;
+    //private float timer = 0;
     void Start()
     {
         _tex = new Texture2D(width, height, TextureFormat.RGBA32, false);

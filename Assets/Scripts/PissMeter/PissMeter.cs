@@ -5,7 +5,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class PissMeter : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    public int PissAmount {  get; private set; }  = 0;
+    public float PissAmount {  get; private set; }  = 0;
 
     private void FindSlider()
     {
@@ -25,7 +25,7 @@ public class PissMeter : MonoBehaviour
         _slider.value = PissAmount;
     }
 
-    public void RemovePiss(int pissAmount)
+    public void RemovePiss(float pissAmount)
     {
         PissAmount -= pissAmount;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);

@@ -7,7 +7,7 @@ public class PissMeterManager : MonoBehaviour
 {
     public PissMeter[] PissMeters {  get; private set; }
 
-    private Slider[] _sliders;
+    public Slider[] _sliders;
     private int _maxPiss = 100;
 
     void Awake()
@@ -35,7 +35,7 @@ public class PissMeterManager : MonoBehaviour
         }
     }
 
-    public void RemovePissFromMeter(int pissAmount, int pissMeterIndex)
+    public void RemovePissFromMeter(float pissAmount, int pissMeterIndex)
 {
     PissMeters[pissMeterIndex].RemovePiss(pissAmount);
 }

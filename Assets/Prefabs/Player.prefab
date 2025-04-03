@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 1
   MoveSpeed: 5.5
   SprintSpeed: 30
   RotationSmoothTime: 0.12
@@ -541,8 +542,7 @@ MonoBehaviour:
   _playerIndex: 1
   _pisser3000: {fileID: 6265459043413439739}
   _pisserTurbo: {fileID: 5989440627914367862}
-  _pissMeterManager: {fileID: 0}
-  _pissAmount: 1
+  _pissAmount: 0.25
   _sprintPissRatio: 2
   _camera: {fileID: 1065478515086491945}
 --- !u!114 &7141870628586388901

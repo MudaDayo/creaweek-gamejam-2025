@@ -91,17 +91,15 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
-        [SerializeField] private AudioSource _audioSource;
-
         public float _recoilModifier = 0.5f;
         public int _playerIndex = 1; // 1-4
 
         //piss
         [SerializeField]private GameObject _pisser3000;
         [SerializeField]private GameObject _pisserTurbo;
-        [SerializeField]private PissMeterManager _pissMeterManager;
+        private PissMeterManager _pissMeterManager;
 
-        [SerializeField]private int _pissAmount = 1;
+        [SerializeField]private float _pissAmount = 1;
         [SerializeField]private int _sprintPissRatio = 2; // 2x piss when sprinting
 
         // timeout deltatime
@@ -151,6 +149,9 @@ namespace StarterAssets
 
         private void Start()
         {
+            audioManager = FindFirstObjectByType<AudioManager>();
+            audioManager?.PlaySound("LevelMusic");
+
             _pissMeterManager = GameObject.FindGameObjectWithTag("PissMeterManager").GetComponent<PissMeterManager>();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -245,7 +246,7 @@ namespace StarterAssets
         }
         private void Bark(){
             if(_input.bark){
-                _audioSource.Play();
+                audioManager?.PlaySound("Bark" + playerID);
             }
         }
         private void HandleDrinkAction(){
@@ -262,7 +263,7 @@ namespace StarterAssets
 
             if (_input.piss)
             {
-                int pissAmount = _pissAmount;
+                float pissAmount = _pissAmount;
                 if(_input.sprint && !_pisserTurbo.GetComponent<ParticleSystem>().isPlaying){
                         _pisserTurbo.GetComponent<ParticleSystem>().Play();
                         pissAmount *= _sprintPissRatio;
@@ -282,7 +283,7 @@ namespace StarterAssets
                         particleSystem.Play();
 
                         // normal pissing
-                        audioManager?.PlaySound("Piss" + _playerIndex);
+                        //audioManager?.PlaySound("Piss" + _playerIndex);
                     }
                 }
             }
