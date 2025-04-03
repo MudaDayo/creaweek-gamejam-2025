@@ -26,7 +26,7 @@ public class GameTimer : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             UpdateTimerDisplay();
         }
-        else if (timerRunning)
+        else
         {
             timeRemaining = 0;
             timerRunning = false;
