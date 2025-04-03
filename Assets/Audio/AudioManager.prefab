@@ -116,8 +116,8 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 07d11cc36416ff14084be0600a1f3f4f, type: 3}
     loop: 1
-    minVolume: 1
-    maxVolume: 1
+    minVolume: 0.2
+    maxVolume: 0.3
     minPitch: 1
     maxPitch: 1
     lastPlayedIndex: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: ff296d7fcff09514cbff79bbfaedfad4, type: 3}
     loop: 1
-    minVolume: 1
-    maxVolume: 1
+    minVolume: 0.2
+    maxVolume: 0.3
     minPitch: 1
     maxPitch: 1
     lastPlayedIndex: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 82b2a7d1fb2582b41a8a9bed33004704, type: 3}
     loop: 1
-    minVolume: 1
-    maxVolume: 1
+    minVolume: 0.2
+    maxVolume: 0.3
     minPitch: 1
     maxPitch: 1
     lastPlayedIndex: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 7982ce1ab392cfd4585a23590ef1779a, type: 3}
     loop: 1
-    minVolume: 1
-    maxVolume: 1
+    minVolume: 0.2
+    maxVolume: 0.3
     minPitch: 1
     maxPitch: 1
     lastPlayedIndex: 0
