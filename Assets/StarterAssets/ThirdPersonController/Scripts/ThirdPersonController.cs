@@ -244,9 +244,18 @@ namespace StarterAssets
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
         }
-        private void Bark(){
-            if(_input.bark){
+        public bool _canBark = true;
+
+        private void Bark()
+        {
+            if (_input.bark && _canBark)
+            {
                 audioManager?.PlaySound("Bark" + playerID);
+                _canBark = false;
+            }
+            else if (!_input.bark)
+            {
+                _canBark = true;
             }
         }
         private void HandleDrinkAction(){

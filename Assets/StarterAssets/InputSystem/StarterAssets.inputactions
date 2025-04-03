@@ -61,7 +61,7 @@
                 },
                 {
                     "name": "Bark",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "1805fb97-6dc7-4fc3-9387-945fbc50f8f4",
                     "expectedControlType": "",
                     "processors": "",
