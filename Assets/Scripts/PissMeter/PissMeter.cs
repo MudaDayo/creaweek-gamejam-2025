@@ -32,7 +32,7 @@ public class PissMeter : MonoBehaviour
 
     public void AddPiss(float pissAmount)
     {
-        PissAmount += pissAmount;
+        PissAmount += pissAmount*2f;
         PissAmount = Mathf.Clamp(PissAmount, 0, 100);
         _slider.value = PissAmount;
     }
